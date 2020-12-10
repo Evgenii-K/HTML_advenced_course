@@ -29,21 +29,21 @@
   =======================*/
 
 .promo {
-    background: rgba(113, 103, 105, 0.08);
+    background: linear-gradient(to right, rgba(113, 103, 105, 0.08) 50%, #F1E4E6 50%);
     display: flex;
 
     &__left {
-        padding-left: calc(50% - 800px);
         width: 50%;
     }
 
     &__img {
         width: 100%;
+        padding-left: calc(50% - 570px);
     }
 
     &__right {
         width: 50%;
-        background: #F1E4E6;
+        padding-right: calc(50% - 570px);
     }
 
     &__content::before {
@@ -55,7 +55,6 @@
 
     &__content {
         height: 100%;
-        padding-right: calc(50% - 800px);
         display: flex;
         align-items: center;
         padding-left: 64px;

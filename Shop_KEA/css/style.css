@@ -31,24 +31,25 @@
 /*promo
   =======================*/
 .promo {
-  background: rgba(113, 103, 105, 0.08);
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, rgba(113, 103, 105, 0.08)), color-stop(50%, #F1E4E6));
+  background: linear-gradient(to right, rgba(113, 103, 105, 0.08) 50%, #F1E4E6 50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .promo__left {
-  padding-left: calc(50% - 800px);
   width: 50%;
 }
 
 .promo__img {
   width: 100%;
+  padding-left: calc(50% - 570px);
 }
 
 .promo__right {
   width: 50%;
-  background: #F1E4E6;
+  padding-right: calc(50% - 570px);
 }
 
 .promo__content::before {
@@ -60,7 +61,6 @@
 
 .promo__content {
   height: 100%;
-  padding-right: calc(50% - 800px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
