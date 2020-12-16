@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,100&display=swap');
-@import url('null.css');
+@import 'null';
+@import 'variables';
 
 .center {
     padding: 0 calc(50% - 570px) 0 calc(50% - 570px);
@@ -54,7 +55,7 @@
         padding-left: 16px;
         flex-direction: column;
         justify-content: center;
-        border-left: 12px solid #F16D7F;
+        border-left: 12px solid $pageColor;
     }
 
     &__heading {
@@ -73,7 +74,7 @@
     }
 
     &__rad-text {
-        color: #F16D7F;
+        color: $pageColor;
     }
 }
 
@@ -122,7 +123,7 @@
         line-height: 36px;
         font-weight: 600;
         text-transform: uppercase;
-        color: #F16D7F;
+        color: $pageColor;
     }
 }
 
@@ -152,32 +153,29 @@
         font-weight: 400;
         font-size: 24px;
         line-height: 29px;
-        color: #F16D7F;
+        color: $pageColor;
         text-transform: uppercase;
     }
 
     &__link {
-        font-family: 'lato', sans-serif;
-        font-weight: 300;
-        font-size: 14px;
         line-height: 17px;
         color: #636363;
         text-transform: uppercase;
+
+        &:hover {
+            color: $pageColor;
+            font-weight: 600;
+        }
+
+        &:not(:last-child):after {
+            content: '\2002/';
+            color: #636363;
+        }
     }
 
     &__link--active {
-        color: #F16D7F;
+        color: $pageColor;
         font-weight: 600;
-    }
-
-    &__link:hover {
-        color: #F16D7F;
-        font-weight: 600;
-    }
-
-    &__link:not(:last-child):after {
-        content: '\2002/';
-        color: #636363;
     }
 }
 
@@ -196,11 +194,9 @@
     }
 
     &__filter-link {
-        font-family: 'lato', sans-serif;
         font-weight: 600;
-        font-size: 14px;
         line-height: 17px;
-        color: #000000;
+        color: #000;
     }
 
     &__filter-svg {
@@ -319,7 +315,7 @@
         padding: 9px 30px 9px 9px;
         margin: 5px 0 0 0;
         position: absolute;
-        background: #FFFFFF;
+        background: #FFF;
         box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
         z-index: 100;
         display: flex;
@@ -376,7 +372,7 @@
     border: 1px solid #EAEAEA;
     position: relative;
     margin: -60px 0 0 0;
-    background: #FFFFFF;
+    background: #FFF;
 
     &__inner {
         width: 610px;
@@ -390,7 +386,7 @@
         font-weight: 300;
         font-size: 14px;
         line-height: 17px;
-        color: #F16D7F;
+        color: $pageColor;
         opacity: .8;
     }
 
@@ -520,7 +516,7 @@
         margin: 24px 0 12px 18px;
 
         &:hover {
-            color: #F16D7F;
+            color: $pageColor;
         }
     }
 
@@ -534,7 +530,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
-        color: #F16D7F;
+        color: $pageColor;
         margin: 18px 0 20px 18px;
     }
 
@@ -558,7 +554,7 @@
         width: 360px;
     }
 
-    &__heading {
+    &__form-heading {
         font-weight: 300;
         font-size: 16px;
         line-height: 19px;
@@ -592,9 +588,9 @@
         transition: .15s linear;
 
         &:hover {
-            background: #F16D7F;
-            border: 1px solid #F16D7F;
-            color: #FFFFFF;
+            background: $pageColor;
+            border: 1px solid $pageColor;
+            color: #FFF;
         }
     }
 
@@ -618,12 +614,12 @@
     &__form-checkout {
 
         width: 100%;
-        background: #F16D7F;
-        border: 1px solid #F16D7F;
+        background: $pageColor;
+        border: 1px solid $pageColor;
         font-size: 16px;
         line-height: 19px;
         padding: 16px 0;
-        color: #FFFFFF;
+        color: #FFF;
         transition: .15s linear;
 
         &:hover {
@@ -644,7 +640,7 @@
     &__form-grandtotal {
         font-size: 16px;
         line-height: 19px;
-        color: #222222;
+        color: #222;
     }
 
     &__form-span {
@@ -653,7 +649,7 @@
 
     &__form-span--color {
         font-weight: 900;
-        color: #F16D7F;
+        color: $pageColor;
     }
 }
 
@@ -687,7 +683,7 @@
         font-weight: 400;
         font-size: 24px;
         line-height: 29px;
-        color: #222222;
+        color: #222;
         text-transform: uppercase;
         margin-bottom: 42px;
     }
@@ -869,7 +865,7 @@
 
 .feature {
 
-    background: #222224;
+    background: #222;
     display: flex;
     justify-content: space-around;
     height: 341px;
@@ -923,7 +919,7 @@
     &__text {
         font-size: 20px;
         line-height: 24px;
-        color: #222224;
+        color: #222;
     }
 
     &__form {
@@ -938,7 +934,7 @@
     }
 
     &__text-form {
-        color: #222224;
+        color: #222;
         font-size: 18px;
         text-transform: uppercase;
         line-height: 167.2%;
@@ -960,7 +956,7 @@
 
     &__button {
         width: 100px;
-        background: #F16D7F;
+        background: $pageColor;
         height: 49px;
         display: block;
         border-radius: 0 25px 25px 0;
@@ -1019,7 +1015,7 @@
         }
 
         &:hover {
-            background-color: #F16D7F;
+            background-color: $pageColor;
 
             .footer__img {
                 fill: white;
@@ -1032,5 +1028,4 @@
         fill: black;
         transition: 0.15s linear;
     }
-
 }
