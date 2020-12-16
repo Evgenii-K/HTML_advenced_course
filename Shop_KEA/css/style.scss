@@ -235,10 +235,10 @@
         display: flex;
         flex-direction: column;
         display: none;
-    }
 
-    &__filter-nav:hover {
-        display: block;
+        &:hover {
+            display: block;
+        }
     }
 
     &__summery-category {
@@ -265,10 +265,10 @@
         font-size: 14px;
         line-height: 17px;
         color: #6F6E6E;
-    }
 
-    &__details-link:hover {
-        color: #EF5B70;
+        &:hover {
+            color: #EF5B70;
+        }
     }
 
     &__sort {
@@ -290,28 +290,28 @@
         font-size: 14px;
         line-height: 17px;
         color: #6F6E6E;
+
+        &:hover {
+            color: #EF5B70;
+
+            .sort-by__summery-arrow {
+                fill: #EF5B70;
+            }
+        }
     }
 
     &__summery::-webkit-details-marker {
         display: none;
     }
 
-    &__summery:hover {
-        color: #EF5B70;
-
-        .sort-by__summery-arrow {
-            fill: #EF5B70;
-        }
-    }
-
     &__summery-arrow {
         fill: #6F6E6E;
         margin: 0 0 1px 10px;
-    }
 
-    &__summery-arrow:hover {
-        fill: #EF5B70;
-        margin: 0 0 1px 10px;
+        &:hover {
+            fill: #EF5B70;
+            margin: 0 0 1px 10px;
+        }
     }
 
     &__size {
@@ -326,12 +326,12 @@
         flex-direction: column;
     }
 
-    &__size-box:not(:last-child) {
-        margin: 0 0 9px 0;
-    }
-
     &__size-box {
         display: flex;
+
+        &:not(:last-child) {
+            margin: 0 0 9px 0;
+        }
     }
 
     &__size-text {
@@ -436,6 +436,7 @@
     display: flex;
     flex-direction: column;
     margin: 14px 0 18px 0;
+    text-align: center;
 
     &__product--mb {
         margin: 129px 0 98px 0;
@@ -474,14 +475,14 @@
         margin: 0 0 30px 0;
     }
 
-    &__item-inner:hover {
-        .products__add {
-            opacity: 1;
-        }
-    }
-
     &__item-inner {
         position: relative;
+
+        &:hover {
+            .products__add {
+                opacity: 1;
+            }
+        }
     }
 
     &__img-item {
@@ -517,10 +518,10 @@
         line-height: 16px;
         color: #000000;
         margin: 24px 0 12px 18px;
-    }
 
-    &__heading-item:hover {
-        color: #F16D7F;
+        &:hover {
+            color: #F16D7F;
+        }
     }
 
     &__text {
@@ -535,6 +536,192 @@
         line-height: 19px;
         color: #F16D7F;
         margin: 18px 0 20px 18px;
+    }
+
+
+}
+
+/*shopping
+  =======================*/
+
+.shopping {
+    display: flex;
+    justify-content: space-between;
+    margin: 96px 0 128px 0;
+
+    &__button {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__form {
+        width: 360px;
+    }
+
+    &__heading {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #222222;
+    }
+
+    &__form-input {
+        display: block;
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid #A4A4A4;
+        font-size: 13px;
+        line-height: 16px;
+        color: #222222;
+        margin: 20px 0;
+
+        &::placeholder {
+            font-size: 13px;
+            line-height: 16px;
+            color: #B1B1B1;
+        }
+    }
+
+    &__form-submit {
+        background-color: #fff;
+        padding: 14px 16px;
+        border: 1px solid #A4A4A4;
+        font-size: 11px;
+        line-height: 13px;
+        color: rgba(74, 74, 74, .8);
+        transition: .15s linear;
+
+        &:hover {
+            background: #F16D7F;
+            border: 1px solid #F16D7F;
+            color: #FFFFFF;
+        }
+    }
+
+    &__form-checkbox {
+        padding: 42px;
+        background: #F5F3F3;
+        text-align: right;
+    }
+
+    &__form-hr {
+        width: 100%;
+        background: #E2E2E2;
+        margin: 21px 0 17px 0;
+        height: 1px;
+    }
+
+    &__form-checkbox--mb {
+        margin: 57px 0 0 0;
+    }
+
+    &__form-checkout {
+
+        width: 100%;
+        background: #F16D7F;
+        border: 1px solid #F16D7F;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 16px 0;
+        color: #FFFFFF;
+        transition: .15s linear;
+
+        &:hover {
+            background-color: #F5F3F3;
+            border: 1px solid #A4A4A4;
+            color: rgba(74, 74, 74, .8);
+        }
+    }
+
+    &__form-subtotal {
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+        color: #4A4A4A;
+        margin: 0 0 12px 0;
+    }
+
+    &__form-grandtotal {
+        font-size: 16px;
+        line-height: 19px;
+        color: #222222;
+    }
+
+    &__form-span {
+        padding: 0 0 0 12px;
+    }
+
+    &__form-span--color {
+        font-weight: 900;
+        color: #F16D7F;
+    }
+}
+
+/*cart
+  =======================*/
+
+.cart {
+    width: 652px;
+    height: 306px;
+    display: flex;
+    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+    margin: 0 0 30px 0;
+
+
+    &__img {
+        height: 100%;
+    }
+
+    &__info {
+        padding: 22px 22px 22px 31px;
+        width: 100%;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        width: 262px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: #222222;
+        text-transform: uppercase;
+        margin-bottom: 42px;
+    }
+
+    &__link-close {
+        margin-top: 6px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 26px;
+        color: #575757;
+        padding: 0 0 6px 0;
+    }
+
+    &__text--color {
+        color: #EF5B70;
+    }
+
+    &__input {
+        display: flex;
+    }
+
+    &__number {
+        margin-left: 22px;
+        border: 1px solid #EAEAEA;
+        width: 43px;
+        height: 24px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #656565;
     }
 
 
@@ -560,6 +747,18 @@
         width: 211px;
         height: 48px;
         border: 1px solid #FF6A6A;
+
+        &:hover {
+            background-color: #F26376;
+
+            .browse-button__svg {
+                fill: #fff;
+            }
+
+            .browse-button__text {
+                color: #fff;
+            }
+        }
     }
 
     &__index--mb {
@@ -570,15 +769,14 @@
         margin-top: 48px;
     }
 
-    &__link:hover {
-        background-color: #F26376;
+    &__shopping--mb {
+        margin-top: 42px;
+        border: 1px solid #A4A4A4;
+        width: 100%;
+        padding: 0 39px;
 
-        .browse-button__svg {
-            fill: #fff;
-        }
-
-        .browse-button__text {
-            color: #fff;
+        &:hover {
+            border: 1px solid #FF6A6A;
         }
     }
 
@@ -595,6 +793,10 @@
         line-height: 48px;
         color: #F26376;
         transition: 0.15s linear;
+    }
+
+    &__text--shopping {
+        color: #000000;
     }
 }
 
@@ -622,20 +824,20 @@
         color: #5D5D5D;
         opacity: .4;
         transition: .15s linear;
-    }
 
-    &__link:hover {
-        color: #EF5B70;
-        opacity: 1;
+        &:hover {
+            color: #EF5B70;
+            opacity: 1;
+        }
+
+        &:not(:nth-last-child(2)) {
+            padding: 0 0 0 15px;
+        }
     }
 
     &__link--active {
         color: #EF5B70;
         opacity: 1;
-    }
-
-    &__link:not(:nth-last-child(2)) {
-        padding: 0 0 0 15px;
     }
 
     &__link--arrow:not(:first-child) {
@@ -646,10 +848,10 @@
         margin: 0 0 -1px 0;
         fill: black;
         transition: .15s linear;
-    }
 
-    &__img-arrow:hover {
-        fill: #EF5B70;
+        &:hover {
+            fill: #EF5B70;
+        }
     }
 
     &__ellipsis-span {
@@ -772,12 +974,11 @@
         justify-content: center;
         color: rgba(255, 255, 255, 0.8);
         transition: 0.15s linear;
-    }
 
-    &__button:hover {
-        background: #E05C6E;
+        &:hover {
+            background: #E05C6E;
+        }
     }
-
 }
 
 /*footer
@@ -802,10 +1003,6 @@
         display: flex;
     }
 
-    &__link:not(:last-child) {
-        margin: 0 7px 0 0;
-    }
-
     &__link {
         display: block;
         width: 32px;
@@ -816,13 +1013,17 @@
         align-items: center;
         transition: 0.15s linear;
         position: relative;
-    }
 
-    &__link:hover {
-        background-color: #F16D7F;
+        &:not(:last-child) {
+            margin: 0 7px 0 0;
+        }
 
-        .footer__img {
-            fill: white;
+        &:hover {
+            background-color: #F16D7F;
+
+            .footer__img {
+                fill: white;
+            }
         }
     }
 
@@ -831,4 +1032,5 @@
         fill: black;
         transition: 0.15s linear;
     }
+
 }
