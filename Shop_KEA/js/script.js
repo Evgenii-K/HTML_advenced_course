@@ -2,7 +2,8 @@
 
 const cart = document.querySelector('.cart'),
       svg = document.querySelectorAll('.cart__link-svg'),
-      shop = document.querySelector('.shopping__cart-list');
+      shop = document.querySelector('.shopping__cart-list'),
+      svgOne = document.querySelector('.cart__link-svg');
 
 console.log(cart);
 console.log(svg);
@@ -17,12 +18,15 @@ console.log(svg);
 //     }));
 // });
 
+console.dir(svgOne);
+
 svg.forEach(item => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener('clice', (e) => {
         console.log(e.currentTarget);
         e.currentTarget.remove();
     });
 });
+
 
 // console.log(deleteShop);
 

@@ -256,7 +256,7 @@
     &__filter-nav {
         width: 360px;
         position: absolute;
-        box-sizing: padding-box;
+        // box-sizing: padding-box;
         padding: 16px;
         margin: -30px 0 0 0;
         background: #FFFFFF;
@@ -344,7 +344,7 @@
     }
 
     &__size {
-        box-sizing: padding-box;
+        // box-sizing: padding-box;
         padding: 9px 30px 9px 9px;
         margin: 5px 0 0 0;
         position: absolute;
@@ -390,6 +390,7 @@
 
     &__img {
         padding: 11px 0 42px 0;
+        max-width: 100%;
     }
 }
 
@@ -408,9 +409,7 @@
     background: #FFF;
 
     &__inner {
-        width: 610px;
-        border-bottom: 1px solid #EAEAEA;
-        padding-bottom: 64px;
+        max-width: 610px;
         margin-bottom: 64px;
         text-align: center;
     }
@@ -446,6 +445,7 @@
         color: #5E5E5E;
         margin: 48px 0 32px 0;
         opacity: .8;
+        max-width: 555px;
     }
 
     &__price {
@@ -453,6 +453,10 @@
         line-height: 29px;
         color: #EF5B70;
         opacity: .8;
+        border-bottom: 1px solid #EAEAEA;
+        padding-bottom: 64px;
+        max-width: 641px;
+        margin: 0 auto;
     }
 }
 
@@ -468,7 +472,8 @@
     text-align: center;
 
     &__product--mb {
-        margin: 129px 0 98px 0;
+        margin-top: 129px;
+        margin-bottom: 98px;
     }
 
     &__heading {
@@ -552,6 +557,7 @@
         line-height: 16px;
         color: #000000;
         margin: 24px 0 12px 18px;
+        transition: 0.15s linear;
 
         &:hover {
             color: $pageColor;
@@ -735,6 +741,8 @@
     &__link-svg {
         fill: #575757;
         transition: transform 0.15s linear;
+        width: 18px;
+        height: 18px;
 
         &:hover {
             fill: $pageColor;
@@ -1089,251 +1097,7 @@
     }
 }
 
-@media (max-width: 1172px) {
+/*adaptive
+  =======================*/
 
-    .center {
-        padding-right: 16px;
-        padding-left: 16px;
-    }
-}
-
-@media (max-width:1139px) {
-
-    .promo {
-
-        &__heading {
-            @include calc-value("font-size", 48, 44, 1140, 768);
-            @include calc-value("line-height", 57, 52, 1140, 768);
-        }
-
-        &__text {
-            @include calc-value("font-size", 30, 24, 1140, 768);
-            @include calc-value("line-height", 38, 28, 1140, 768);
-        }
-
-        &__content {
-            @include calc-value("margin-left", 64, 40, 1140, 768);
-        }
-    }
-
-    .catalog {
-
-        @include calc-value("padding-top", 64, 19, 1140, 768);
-
-        &__item:not(:last-child) {
-            @include calc-value("margin-right", 30, 19, 1140, 768);
-        }
-    }
-
-    .catalog-big {
-
-        @include calc-value("margin-top", 30, 19, 1140, 768);
-
-    }
-
-    .sort-by {
-        @include calc-value("height", 119, 67, 1140, 768);
-        justify-content: space-between;
-    }
-
-    .products {
-
-        &__items {
-            justify-content: space-around;
-            gap: 16px;
-        }
-
-        &__item--mb {
-            @include calc-value("margin-bottom", 30, 18, 1140, 768);
-
-        }
-
-        &__item-last {
-            display: none;
-        }
-    }
-
-    .switch {
-        @include calc-value("margin-bottom", 96, 64, 1140, 768);
-    }
-}
-
-@media (max-width:992px) {
-
-
-    .browse-button {
-
-        &__index--mb {
-            margin: 16px 0 65px 0;
-        }
-    }
-
-    .feature {
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0 0 64px 0;
-
-        &__item {
-            margin: 48px 0 0 0;
-        }
-    }
-
-    .Subscribe {
-        flex-direction: column;
-        padding-top: 54px;
-        padding-bottom: 104px;
-        background-size: cover;
-
-        &__form {
-            margin-top: 48px;
-        }
-    }
-
-}
-
-@media (max-width: 767px) {
-
-    .center {
-        padding-right: 16px;
-        padding-left: 16px;
-    }
-
-    .header {
-
-        &__cart {
-            display: none;
-        }
-
-        &__account {
-            display: none;
-        }
-    }
-
-    .breadcrumb {
-
-        flex-direction: column;
-
-        &__heading {
-            padding-top: 24px;
-        }
-
-        &__nav {
-            padding-bottom: 46px;
-        }
-    }
-
-    .sort-by {
-        height: 81px;
-
-        &__filter {
-            width: 38px;
-        }
-
-        &__filter-modile {
-            display: none;
-        }
-
-        &__filter-svg {
-            width: 38px;
-            height: 25px;
-            margin: 0 auto;
-        }
-
-        &__details:not(:last-child) {
-            margin-right: 24px;
-        }
-
-        &__summery {
-            font-size: 12px;
-            line-height: 14px;
-        }
-    }
-
-    .promo {
-
-        background: #F1E4E6;
-        height: 363px;
-
-        &__left {
-            display: none;
-        }
-
-        &__right {
-            width: 100%;
-            justify-content: center;
-        }
-
-        &__content {
-            margin-left: 0;
-        }
-
-        &__heading {
-            @include calc-value("font-size", 44, 38, 768, 375);
-            @include calc-value("line-height", 52, 45, 768, 375);
-        }
-
-        &__text {
-            @include calc-value("font-size", 24, 20, 768, 375);
-            @include calc-value("line-height", 28, 24, 768, 375);
-        }
-    }
-
-    .catalog {
-        flex-direction: column;
-        padding-top: 64px;
-
-        &__item {
-            margin: 0 0 32px 0;
-        }
-    }
-
-    .catalog-big {
-        margin: 0 0 32px 0;
-
-        &__img {
-            height: 111px;
-        }
-    }
-
-    .products__item--mb {
-        margin-bottom: 16px;
-    }
-
-    .switch {
-        margin-bottom: 64px;
-    }
-
-    .Subscribe {
-
-        &__text {
-            font-size: 18px;
-            line-height: 22px;
-        }
-
-        &__text-form {
-            font-size: 14px;
-            line-height: 22px;
-        }
-    }
-
-    .footer {
-        flex-direction: column-reverse;
-        padding-bottom: 9px;
-        padding-top: 43px;
-
-        &__social-icon {
-            padding-bottom: 40px;
-        }
-    }
-}
-
-@media (max-width: 374px) {
-
-    .sort-by {
-
-        &__summery-arrow {
-            display: none;
-        }
-    }
-}
+@import 'adaptive';
