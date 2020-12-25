@@ -325,7 +325,12 @@
         padding-top: 64px;
 
         &__item {
-            margin: 0 0 32px 0;
+            margin-bottom: 32px;
+            margin-right: 0px;
+        }
+
+        &__item:not(:last-child) {
+            margin-right: 0px;
         }
     }
 
