@@ -1,0 +1,29 @@
+// запрещение переноса текста на новую строку, вместо этого растягивается блок
+white-space: nowrap;
+
+
+// ">" - применять только к прямому потомку
+// focus-within - при наведении фокуса, например при tab с клавиатуры
+li:focus-within > .submenu,
+li:hover > .submenu {
+   display: flex;
+} 
+
+// скрываем элемент но делаем доступным для ридеров и алекса, сири (скрывает только визуально):
+
+position: absolute;
+
+clip: rect(0 0 0 0);
+width: 1px;
+height: 1px;
+margin: -1px;
+
+// чтобы вернуть в видемое состояние прописываем:
+
+clip: auto;
+width: auto;
+height: auto;
+margin: 0;
+
+
+background: rgba(0, 0, 0, 0.5);
