@@ -1,90 +1,55 @@
 'use strict';
 
-const cart = document.querySelector('.cart'),
-      svg = document.querySelectorAll('.cart__link-svg'),
-      shop = document.querySelector('.shopping__cart-list'),
-      svgOne = document.querySelector('.cart__link-svg'),
+const svg = document.querySelectorAll('.cart__link-svg'),
       linkClose = document.querySelector('.hamburger-menu__link-close'),
-      menuLink = document.querySelector('.header__menu--checked'),
+      menuLink = document.querySelector('.header__label'),
       svgColor = document.querySelector('.header__menu--checked-svg'),
-      checkbox = document.querySelector('.header__checkbox');
+      checkbox = document.querySelector('.header__checkbox'),
+      promo = document.querySelector('.promo'),
+      divBackground = document.createElement('div'),
+      divEmpty = document.createElement('div');
 
-console.log(cart);
-console.log(svg);
+divBackground.classList.add('promo__hidden');
+divEmpty.classList.add('cart', 'cart__empty');
+divEmpty.innerHTML = '<h2 class="cart__title">Cart is empty</h2>';
+
+//Изменяем цвет иконки бургер меню в открытом положении
+// и убираеме затемнение promo
 
 svgColor.setAttribute('fill', '#E8E8E8');
 
 linkClose.addEventListener('click', () => {
     checkbox.checked = false;
     svgColor.setAttribute('fill', '#E8E8E8');
+    divBackground.remove();
 });
 
-// menuLink.addEventListener('click', () => {
-//     if (checkbox.checked == false) {
-//         svgColor.setAttribute('fill', '#F16D7F');
-//     } else {
-//         svgColor.setAttribute('fill', '#E8E8E8');
-//     }
-// });
+//Затемняем promo
 
+menuLink.addEventListener('click', () => {
+    if (checkbox.checked == false) {
+        promo.append(divBackground);
+    } else {
+        divBackground.remove();
+    }
+});
 
-
-
-// let deleteShop = shop.addEventListener('mouseover', (e) => {
-//     cart.item(e.target);
-// });
-
-// svg.forEach(item => {
-//     item.addEventListener('click', cart.forEach(item => {
-//         item.remove();
-//     }));
-// });
-
-
-
-console.dir(svgOne);
+//Удаляем нарточку из карзины
 
 svg.forEach(item => {
     item.addEventListener('click', (e) => {
-        console.log(e.currentTarget);
-        e.currentTarget.remove();
+        if (e.path[0].nodeName == 'svg') {
+            if (document.querySelectorAll('.cart').length == 1) {
+                e.path[4].replaceWith(divEmpty);
+            } else {
+                e.path[4].remove();
+            }
+        } else if (e.path[0].nodeName == 'path') {
+            if (document.querySelectorAll('.cart').length == 1) {
+                e.path[5].replaceWith(divEmpty);
+            } else {
+                e.path[5].remove();
+            }
+        }
     });
 });
-
-// svg.forEach(item => {
-//     item.addEventListener('mouseover', (e) => {
-//         // console.log(e.currentTarget.getAttribute('width'));
-//         e.currentTarget.style.width = '35px';
-//         e.currentTarget.style.height = '35px';
-//     });
-// });
-
-
-
-// svg.forEach(item => {
-//     item.addEventListener('mouseout', (e) => {
-//         // console.log(e.currentTarget.getAttribute('width'));
-//         e.currentTarget.style.width = '18px';
-//         e.currentTarget.style.height = '18px';
-//     });
-// });
-
-// console.log(deleteShop);
-
-
-
-
-// cart.forEach((item, i) => {
-//     item.addEventListener('mouseover', () => {
-//         return i;
-//     });
-// });
-
-
-// let i = cartNumb(cart);
-
-// cart.forEach((item, i) => {
-//     item.addEventListener('mouseover', () => {
-//         return i;
-//     });
-// });

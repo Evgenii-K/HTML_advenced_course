@@ -27,6 +27,22 @@
     }
 }
 
+/*wrapper
+  =======================*/
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*top
+  =======================*/
+
+.top {
+    flex-grow: 1;
+}
+
 /*center
   =======================*/
 
@@ -64,6 +80,22 @@
         fill: $pageColor;
     }
 
+    &__menu--checked-svg {
+        transition: fill .15s linear;
+
+        &:hover {
+            fill: $pageColor;
+        }
+    }
+
+    &__menu--checked:hover>.header__menu--checked-svg {
+        fill: $pageColor;
+    }
+
+    &__label:hover>.header__menu--checked-svg {
+        fill: $pageColor;
+    }
+
     &__checkbox {
         position: absolute;
         z-index: -1;
@@ -92,6 +124,7 @@
     background: linear-gradient(to right, rgba(113, 103, 105, 0.08) 50%, #F1E4E6 50%);
     display: flex;
     max-height: 764px;
+    position: relative;
 
     &__left {
         width: 50%;
@@ -136,6 +169,14 @@
 
     &__rad-text {
         color: $pageColor;
+    }
+
+    &__hidden {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
     }
 }
 
@@ -669,6 +710,7 @@
         line-height: 13px;
         color: rgba(74, 74, 74, .8);
         transition: .15s linear;
+        cursor: pointer;
 
         &:hover {
             background: $pageColor;
@@ -703,6 +745,7 @@
         padding: 16px 0;
         color: #FFF;
         transition: .15s linear;
+        cursor: pointer;
 
         &:hover {
             background-color: $pageColor - #111;
@@ -738,7 +781,7 @@
 
 .cart {
     width: 652px;
-    height: 306px;
+    min-height: 306px;
     display: flex;
     box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
     margin: 0 0 30px 0;
@@ -746,7 +789,7 @@
     animation: cart 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.15s both;
 
     &__img {
-        height: 100%;
+        max-height: 306px;
     }
 
     &__info {
@@ -820,6 +863,25 @@
 
     &__number::-webkit-inner-spin-button {
         display: none;
+    }
+
+    &__empty {
+        animation: none;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
+    }
+
+    &__empty>.cart__title {
+        text-transform: none;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        font-size: 32px;
+
+        &:hover {
+            color: #222;
+        }
     }
 
 }

@@ -34,11 +34,16 @@
     }
 
     &__subtitle {
+        display: block;
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
         color: $pageColor;
         margin-bottom: 12px;
+
+        &:hover {
+            color: $pageColor - #111111;
+        }
     }
 
     &__block {
