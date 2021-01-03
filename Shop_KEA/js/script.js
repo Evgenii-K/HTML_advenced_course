@@ -34,7 +34,7 @@ menuLink.addEventListener('click', () => {
     }
 });
 
-//Удаляем нарточку из карзины
+//Удаляем нарточку из корзины
 
 svg.forEach(item => {
     item.addEventListener('click', (e) => {

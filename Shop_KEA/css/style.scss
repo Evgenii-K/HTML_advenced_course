@@ -703,6 +703,10 @@
     }
 
     &__form-submit {
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         background-color: #fff;
         padding: 14px 16px;
         border: 1px solid #A4A4A4;
@@ -738,6 +742,9 @@
 
     &__form-checkout {
 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         width: 100%;
         background: $pageColor;
         font-size: 16px;
@@ -1123,6 +1130,9 @@
     }
 
     &__button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         width: 100px;
         background: $pageColor;
         height: 49px;

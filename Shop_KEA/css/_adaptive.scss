@@ -368,7 +368,12 @@
 
     .cart {
 
+        min-height: 0;
         @include calc-value("height", 306, 188, 768, 375);
+
+        &__img {
+            max-height: 100%;
+        }
 
         &__info {
             padding: 13px 12px 17px 17px;
@@ -393,10 +398,10 @@
             @include calc-value("line-height", 22, 12, 768, 375);
         }
 
-        &__link-svg {
-            @include calc-value("width", 18, 10, 768, 375);
-            @include calc-value("height", 18, 10, 768, 375);
-        }
+        // &__link-svg {
+        //     @include calc-value("width", 18, 10, 768, 375);
+        //     @include calc-value("height", 18, 10, 768, 375);
+        // }
     }
 
     .products {
