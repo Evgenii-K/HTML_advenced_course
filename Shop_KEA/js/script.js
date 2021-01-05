@@ -36,19 +36,37 @@ menuLink.addEventListener('click', () => {
 
 //Удаляем нарточку из корзины
 
+// svg.forEach(item => {
+//     item.addEventListener('click', (e) => {
+//         if (e.path[0].nodeName == 'svg') {
+//             if (document.querySelectorAll('.cart').length == 1) {
+//                 e.path[3].replaceWith(divEmpty);
+//             } else {
+//                 e.path[3].remove();
+//             }
+//         } else if (e.path[0].nodeName == 'path') {
+//             if (document.querySelectorAll('.cart').length == 1) {
+//                 e.path[4].replaceWith(divEmpty);
+//             } else {
+//                 e.path[4].remove();
+//             }
+//         }
+//     });
+// });
+
 svg.forEach(item => {
     item.addEventListener('click', (e) => {
-        if (e.path[0].nodeName == 'svg') {
+        if (e.composedPath()[0].nodeName == 'svg') {
             if (document.querySelectorAll('.cart').length == 1) {
-                e.path[4].replaceWith(divEmpty);
+                e.composedPath()[3].replaceWith(divEmpty);
             } else {
-                e.path[4].remove();
+                e.composedPath()[3].remove();
             }
-        } else if (e.path[0].nodeName == 'path') {
+        } else if (e.composedPath()[0].nodeName == 'path') {
             if (document.querySelectorAll('.cart').length == 1) {
-                e.path[5].replaceWith(divEmpty);
+                e.composedPath()[4].replaceWith(divEmpty);
             } else {
-                e.path[5].remove();
+                e.composedPath()[4].remove();
             }
         }
     });

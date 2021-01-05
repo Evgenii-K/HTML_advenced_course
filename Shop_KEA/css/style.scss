@@ -828,6 +828,8 @@
     }
 
     &__link-svg {
+        cursor: pointer;
+        margin-top: 6px;
         fill: #575757;
         transition: transform 0.15s linear;
         width: 18px;
