@@ -7,7 +7,8 @@ const svg = document.querySelectorAll('.cart__link-svg'),
       checkbox = document.querySelector('.header__checkbox'),
       promo = document.querySelector('.promo'),
       divBackground = document.createElement('div'),
-      divEmpty = document.createElement('div');
+      divEmpty = document.createElement('div'),
+      carts = document.querySelectorAll('.cart');
 
 divBackground.classList.add('promo__hidden');
 divEmpty.classList.add('cart', 'cart__empty');
@@ -26,13 +27,16 @@ linkClose.addEventListener('click', () => {
 
 //Затемняем promo
 
-menuLink.addEventListener('click', () => {
-    if (checkbox.checked == false) {
-        promo.append(divBackground);
-    } else {
-        divBackground.remove();
-    }
-});
+if (promo) {
+    menuLink.addEventListener('click', () => {
+        if (checkbox.checked == false) {
+            promo.append(divBackground);
+        } else {
+            divBackground.remove();
+        }
+    });
+}
+
 
 //Удаляем нарточку из корзины
 
@@ -54,20 +58,34 @@ menuLink.addEventListener('click', () => {
 //     });
 // });
 
-svg.forEach(item => {
+// svg.forEach(item => {
+//     item.addEventListener('click', (e) => {
+//         if (e.composedPath()[0].nodeName == 'svg') {
+//             if (document.querySelectorAll('.cart').length == 1) {
+//                 e.composedPath()[3].replaceWith(divEmpty);
+//             } else {
+//                 e.composedPath()[3].remove();
+//             }
+//         } else if (e.composedPath()[0].nodeName == 'path') {
+//             if (document.querySelectorAll('.cart').length == 1) {
+//                 e.composedPath()[4].replaceWith(divEmpty);
+//             } else {
+//                 e.composedPath()[4].remove();
+//             }
+//         }
+//     });
+// });
+
+
+carts.forEach(item =>{
     item.addEventListener('click', (e) => {
-        if (e.composedPath()[0].nodeName == 'svg') {
+	console.log('click');
+        if (e.target && (e.target.tagName == 'svg' || e.target.tagName == 'path')) {
             if (document.querySelectorAll('.cart').length == 1) {
-                e.composedPath()[3].replaceWith(divEmpty);
+                item.replaceWith(divEmpty);
             } else {
-                e.composedPath()[3].remove();
+                item.remove();
             }
-        } else if (e.composedPath()[0].nodeName == 'path') {
-            if (document.querySelectorAll('.cart').length == 1) {
-                e.composedPath()[4].replaceWith(divEmpty);
-            } else {
-                e.composedPath()[4].remove();
-            }
-        }
+        } 
     });
 });

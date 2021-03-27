@@ -133,6 +133,8 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
 }
 
 /*top

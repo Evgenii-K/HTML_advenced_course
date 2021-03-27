@@ -397,11 +397,6 @@
             @include calc-value("font-size", 18, 10, 768, 375);
             @include calc-value("line-height", 22, 12, 768, 375);
         }
-
-        // &__link-svg {
-        //     @include calc-value("width", 18, 10, 768, 375);
-        //     @include calc-value("height", 18, 10, 768, 375);
-        // }
     }
 
     .products {
