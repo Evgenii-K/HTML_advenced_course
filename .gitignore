@@ -2,10 +2,9 @@
 node_modules
 /dist
 /coverage
-/Lessons
+/lessons
 /zip
-*.docx
-*.txt
+
 
 # local env files
 .env.local
